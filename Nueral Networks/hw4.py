@@ -131,8 +131,6 @@ class Value:
         Implementing exponent
         """
 
-        # TODO implement exp method
-        # perform e^data
 
         out = Value(math.e ** self.data, _parents = (self,), _operation=("exp"))
 
@@ -242,7 +240,6 @@ class Neuron:
         """
 
         # produce linear combination of inputs + intercept
-        # TODO edit to implement dropout
         b = bernoulli.rvs(1-dropout_proba, size=len(self.parameters()))
 
         if train_mode:
@@ -349,7 +346,7 @@ class MLP:
         for e in range(max_epochs):
 
 
-            # TODO implement SGD
+  
 
             for i in range(len(Xmat_train)):
                 prob = self(Xmat_train[i, :])
@@ -396,11 +393,11 @@ def spotify_data():
 
     data = pd.read_csv("spotify_data.csv")
 
-    # TODO: Write code to pre-process the data here
+  
     data_clean = data.drop(columns=["id", "name"])
 
 
-    # TODO: more pre-processing if needed and model training, return the predictions on the test
+    # more pre-processing model training
 
     Xmat = data_clean.drop(columns=["popularity"]).to_numpy()
     Y = data_clean["popularity"].to_numpy()
@@ -427,7 +424,6 @@ def spotify_data():
 
 def main():
     """
-    Edit only the one line marked as # EDIT ME in this function. The rest is used for grading purposes
     """
 
 
@@ -437,9 +433,6 @@ def main():
     Xmat_train, Xmat_val, Y_train, Y_val = make_simulated_data()
     n, d = Xmat_train.shape
 
-    # test base neural net implementation with no dropout
-    # feel free to toggle the verbose flag to False/True to debug your output
-    # for the final submission please set it to False
 
     random.seed(42)
     print("Training neural net with no dropout") #8,4,1
