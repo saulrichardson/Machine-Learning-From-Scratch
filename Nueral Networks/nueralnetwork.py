@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+"""
+Implements a nueral net from scratch
+"""
+
 import numpy as np
 import pandas as pd
 import random
