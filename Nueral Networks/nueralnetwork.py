@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Implements a nueral net from scratch
+Implements a nueral network from scratch
 """
 
 import numpy as np
